@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyHub | Student Study Portal</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a href="#" class="brand"><span class="brand-icon">S</span> StudyHub</a>
+    <p class="menu-label">MENU</p>
+    <a href="#dashboard" class="nav-link active">▦ &nbsp; Dashboard</a>
+    <a href="#materials" class="nav-link">▤ &nbsp; Study Materials</a>
+    <a href="#planner" class="nav-link">✓ &nbsp; Study Planner</a>
+    <div class="sidebar-bottom">
+      <div class="mini-avatar">S</div>
+      <div><strong>Student</strong><small>Keep learning!</small></div>
+    </div>
+  </aside>
+
+  <main class="main-content" id="dashboard">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">YOUR LEARNING SPACE</p>
+        <h1>Student Dashboard</h1>
+      </div>
+      <div class="date-chip" id="today">Welcome back!</div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-tag">✦ LEARN. GROW. SUCCEED.</span>
+        <h2>Your goals are<br>closer than you think.</h2>
+        <p>Organize your studies, explore your subjects and make every day count.</p>
+        <a class="hero-button" href="#materials">Explore Materials ↗</a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-circle"></div>
+        <div class="book book-back"></div>
+        <div class="book book-front">S<br><span>STUDY</span></div>
+        <div class="art-star">✦</div>
+      </div>
+    </section>
+
+    <section class="stats-grid">
+      <article class="stat-card">
+        <div class="stat-icon purple">▤</div>
+        <p>Total Subjects</p>
+        <h3 id="subjectCount">6</h3>
+        <small>Available to explore</small>
+      </article>
+      <article class="stat-card">
+        <div class="stat-icon blue">✓</div>
+        <p>Completed Tasks</p>
+        <h3 id="completedCount">0</h3>
+        <small>Your study progress</small>
+      </article>
+      <article class="stat-card">
+        <div class="stat-icon orange">◷</div>
+        <p>Pending Tasks</p>
+        <h3 id="pendingCount">0</h3>
+        <small>Keep moving forward</small>
+      </article>
+    </section>
+
+    <section class="section" id="materials">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR LIBRARY</p>
+          <h2>Study Materials</h2>
+        </div>
+        <span class="result-count" id="resultCount">6 subjects</span>
+      </div>
+
+      <div class="search-box">
+        <span>⌕</span>
+        <input id="searchInput" type="search"
+          placeholder="Search subjects or topics..."
+          aria-label="Search study materials">
+      </div>
+
+      <div class="filter-row" id="filterRow">
+        <button class="filter active" data-filter="All">All Subjects</button>
+        <button class="filter" data-filter="Science">Science</button>
+        <button class="filter" data-filter="Technology">Technology</button>
+        <button class="filter" data-filter="Mathematics">Mathematics</button>
+      </div>
+
+      <div class="subjects-grid" id="subjectsGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>
+        No subjects found. Try another search.
+      </p>
+    </section>
+
+    <section class="section planner-section" id="planner">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">STAY ON TRACK</p>
+          <h2>My Study Planner</h2>
+        </div>
+        <span class="progress-label" id="progressLabel">0% completed</span>
+      </div>
+
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+
+      <form id="taskForm" class="task-form">
+        <input id="taskInput" type="text"
+          placeholder="Add a study task..." maxlength="120" required>
+        <button type="submit">+ Add Task</button>
+      </form>
+      <div class="task-list" id="taskList"></div>
+      <p class="empty-state" id="taskEmpty">No tasks yet. Add your first study task!</p>
+    </section>
+
+    <footer>
+      <p>© 2026 StudyHub · Made for curious minds ✦</p>
+    </footer>
+  </main>
+
+  <dialog id="subjectDialog" class="subject-dialog">
+    <button id="closeDialog" class="close-dialog" aria-label="Close">×</button>
+    <div id="dialogContent"></div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
